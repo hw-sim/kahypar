@@ -615,7 +615,8 @@ po::options_description createGenericOptionsDescription(Context& context,
     ("sp-process,s", po::value<bool>(&context.partition.sp_process_output)->value_name("<bool>"),
     "Summarize partitioning results in RESULT line compatible with sqlplottools "
     "(https://github.com/bingmann/sqlplottools)")
-    ("write-partition,w", po::value<bool>(&context.partition.write_partition_file)->value_name("<bool>"), "Write output partition. Default: false");
+    ("write-partition,w", po::value<bool>(&context.partition.write_partition_file)->value_name("<bool>"), "Write output partition. Default: false")
+    ("write-partition-filename,W", po::value<std::string>(&context.partition.write_partition_filename)->value_name("<string>"), "Write output partition to file. Default: None (don't write them)");
   return generic_options;
 }
 

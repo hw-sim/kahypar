@@ -65,6 +65,9 @@ class PartitionerFacade {
     if (context.partition.write_partition_file) {
       io::writePartitionFile(hypergraph, context.partition.graph_partition_filename);
     }
+    if (!context.partition.write_partition_filename.empty()) {
+      io::writePartitionFile(hypergraph, context.partition.write_partition_filename);
+    }
 
     if (context.partition.sp_process_output) {
       io::serializer::serialize(context, hypergraph, elapsed_seconds, iteration);
